@@ -1,0 +1,72 @@
+---
+title: "<br>Anomaly detection and other machine learning tools in industry 4.0" 
+author: "Andrew C Parnell"
+date: "11th July 2022 <br> https://is.gd/Parnell_MM_talk"
+output: 
+  ioslides_presentation: 
+    css: my-style.css
+    transition: slower
+    widescreen: yes
+    linkcolor: white
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width = 5, fig.align = 'center')
+```
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"https://is.gd/reproducibility\"></footer>');    
+    })
+</script>
+
+<style>
+  footer:after {
+    content: attr(label);
+    font-size: 12pt;
+    position: absolute;
+    bottom: 25px;
+    left: 60px;
+    line-height: 1.9;
+  }
+</style>
+
+
+
+## Contents
+
+<br>
+
+<span style="color:red">1. An introduction to AI</span><br>
+
+<span style="color:blue">2. How AI can help you in your PhD</span><br>
+
+# <span style = "color:orangered;position:relative;top:50px;">What is AI?</span> {data-background=https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png data-background-size=cover}
+
+## Resources and funding
+
+Monticchio: [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/b/b1/Monticchio_Laghi.jpg);
+gifs: [Giphy](https://giphy.com);
+AMS machine: [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/f/f0/1_MV_accelerator_mass_spectrometer.jpg);
+Roadworks background: [flickr/Jeremy Segrott](https://www.flickr.com/photos/126337928@N05/);
+Confidence in the IPCC: [IPCC.ch](https://www.ipcc.ch/site/assets/uploads/2017/08/AR5_Uncertainty_Guidance_Note.pdf)
+Baby turtle: [flickr/Pedro Szekely](https://www.flickr.com/photos/pedrosz/);
+[BART generator](http://www.ranzey.com/generators/bart/index.html);
+Anger: [flickr/Saurabh Vyas](https://www.flickr.com/photos/vyassaurabh411/);
+Walking: [flickr/gato-gato-gato](https://www.flickr.com/photos/gato-gato-gato/)
+__All materials: [Github repo](https://github.com/andrewcparnell/reproducibility_talk_jan22)__
+
+This work was supported by a Science Foundation Ireland Career Development Award grant 17/CDA/4695
+
+
+<center>
+
+![](https://www.sfi.ie/sfi-logo-and-guidelines/SFI_logo_2017__Dual(long)_CMYK.png){width=50%}
+
+<br> 
+
+<font size="6"><span style="color:red;">Thank you!</span></font>
+
+</center>

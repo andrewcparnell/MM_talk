@@ -1,0 +1,46 @@
+.gdbar img {
+  width: 215px !important;
+  height: 80px !important;
+  margin: 4px 4px;
+}
+
+.gdbar {
+  width: 400px !important;
+  height: 100px !important;
+  color: white;
+}
+
+slides > slide {
+  font-family: "Monaco", Times, serif;
+}
+
+
+slides > slide:not(.nobackground):before {
+  width: 108px;
+  height: 40px;
+  background-size: 108px 40px;
+}
+
+body{
+  font-family: Helvetica;
+  font-size: 24pt;
+}
+
+slides>slide.title-slide {
+  background-image: url('https://github.com/andrewcparnell/reproducibility_talk_jan22/raw/main/img/code.png');
+  background-size: 100% 100%;
+}
+
+slides > slide.title-slide p{
+  color: white;
+}
+
+slides > slide.title-slide h1{
+  color: white;
+}
+slides > slide.title-slide a{
+  color: white;
+}
+slides > slide.title-slide a{
+  color: white;
+}

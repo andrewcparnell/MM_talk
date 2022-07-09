@@ -3312,10 +3312,10 @@ color: white;
 </article></slide><slide class=""><hgroup><h2>What makes these data all the same?</h2></hgroup><article  id="what-makes-these-data-all-the-same">
 
 <ul>
-<li>They each have a <strong>target</strong> that we’re trying to predict (a digit, a disease state, an aspect of a tool)</li>
+<li>They each have a <strong>target</strong> that we’re trying to predict (a digit, the size of a tumour, an aspect of a tool)</li>
 <li>They each have a large number of <strong>features</strong> which we can use to predict the target (pixels, genes, sensor data)</li>
 <li>If we write the target as \(y\) and the features as \(X\) all these can be written as rectangular data structures (like an Excel spreadsheet)</li>
-<li>We make the predictions using a <strong>learner</strong>. There are lots of different types, from linear regression to neural networks</li>
+<li>We make the predictions using a <strong>learner</strong>. There are lots of different types, from linear regression to deep neural networks</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Testing performance</h2></hgroup><article  id="testing-performance">
@@ -3340,7 +3340,7 @@ test_set = sample(n,
                   size = n/4)
 train_set = (1:n)[-test_set]
 # Set up a leaner
-learner_1 = makeLearner(&#39;regr.randomForest&#39;)
+learner_1 = makeLearner(&#39;regr.h2o.deeplearning&#39;)
 # Train it on the training data
 train_1 = train(learner = learner_1, task = task_1, 
                 subset = train_set)
@@ -3362,21 +3362,21 @@ performance(pred_1)</pre>
 </article></slide><slide class=""><hgroup><h2>The foundation of all the black boxes: least squares linear regression</h2></hgroup><article  id="the-foundation-of-all-the-black-boxes-least-squares-linear-regression">
 
 <ul>
-<li>Recall that we’re trying to find \(f()\) in: \[y = f(X) + e\]</li>
-<li>The simplest possible useful model is a linear regression model: \[y = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots + e\] so \(f(X) = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots\)</li>
-<li>We usually minimise the least squares function: \[\sum (y - f(X))^2\] This gives us the `best’ values of \(b_1\), \(b_2\) etc</li>
+<li><p>We aim to estimate \(f()\) in: \[y = f(X) + e\]</p></li>
+<li><p>The simplest possible useful model is a linear regression model: \[f = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots \]</p></li>
+<li><p>We might minimise the least squares loss function: \[\sum (y - f(X))^2\] We find the `best’ values of \(a\), \(b_1\), \(b_2\) etc that minimise the loss</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>What are the Black boxes? Neural networks/Deep learning</h2></hgroup><article  id="what-are-the-black-boxes-neural-networksdeep-learning">
+</article></slide><slide class=""><hgroup><h2>From linear regression to deep learning</h2></hgroup><article  id="from-linear-regression-to-deep-learning">
 
 <p>Make the \(b\) terms depend on other hidden \(b\) terms to produce richer functional behaviour</p>
 
 <p></p>
 
-</article></slide><slide class=""><hgroup><h2>Types of ML</h2></hgroup><article  id="types-of-ml">
+</article></slide><slide class=""><hgroup><h2>Types of AI</h2></hgroup><article  id="types-of-ai">
 
 <ul>
-<li>Strictly speaking, the previously mentioned problems are all part of a sub-class of ML called <strong>supervised learning</strong>. They are supervised because they have a target variable. If the target variable is continuous this is commonly called <em>regression</em> (e.g. the genetics data) whilst if it is discrete it is known as <em>classification</em> (e.g. the digits data)</li>
+<li>Strictly speaking, the previously mentioned problems are all part of a sub-class of AI called <strong>supervised learning</strong>. They are supervised because they have a target variable. If the target variable is continuous this is commonly called <em>regression</em> (e.g. the genetics data) whilst if it is discrete it is known as <em>classification</em> (e.g. the digits data)</li>
 <li>Another version of ML occurs when you have no target variable. In this case this is commonly known as <strong>unsupervised learning</strong>.</li>
 </ul>
 
@@ -3388,7 +3388,7 @@ performance(pred_1)</pre>
 
 </article></slide><slide class=""><hgroup><h2>What does the data look like?</h2></hgroup><article  id="what-does-the-data-look-like">
 
-<pre class = 'prettyprint lang-r'>mnist[1:6, c(405:410, 785)] #0 = white, 255 = black</pre>
+<pre class = 'prettyprint lang-r'>mnist[1:6, c(405:410, 785)] # 0 = white, 255 = black</pre>
 
 <pre >##   pix405 pix406 pix407 pix408 pix409 pix410 digit
 ## 1      0     81    240    253    253    119     5
@@ -3440,7 +3440,7 @@ pred_dl = predict(object = train_dl, task = task_mn,
 </article></slide><slide class=""><hgroup><h2>What about other ML models?</h2></hgroup><article  id="what-about-other-ml-models">
 
 <ul>
-<li>It is now trivial to train other models in the same way</li>
+<li>With <code>mlr</code> it is easy to train other models in the same way</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>learner_rf = makeLearner(&#39;classif.h2o.randomforest&#39;,
@@ -3464,9 +3464,22 @@ print(performance(pred_rf))</pre>
 </article></slide><slide class=""><hgroup><h2>Neural network extensions</h2></hgroup><article  id="neural-network-extensions">
 
 <ul>
-<li>Convolutional and recurrent</li>
-<li></li>
+<li>Convolutional and recurrent neural networks designed for image or time series data</li>
+<li>Transfer learning where we use a pre-trained neural network that might have seen similar data to that which we are modelling</li>
+<li>Active learning which allows for the user to train the model (e.g. provide labels) on data that the model is struggling to predict</li>
+<li>There are many more!</li>
 </ul>
+
+</article></slide><slide class="segue nobackground level1 fill" style="background-image: url(https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png); background-size: cover; background-position: center;"><hgroup class = 'auto-fadein'><h2><span style="color:white;position:relative;top:50px;">
+Part 2: AII and I-Form</span></h2></hgroup><article  id="part-2-aii-and-i-form">
+
+</article></slide><slide class=""><hgroup><h2>A recommender system</h2></hgroup><article  id="a-recommender-system">
+
+<video controls>
+
+<source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/recsys1.MOV" type="video/mov">
+
+</video>
 
 </article></slide><slide class=""><hgroup><h2>Resources and funding</h2></hgroup><article  id="resources-and-funding">
 

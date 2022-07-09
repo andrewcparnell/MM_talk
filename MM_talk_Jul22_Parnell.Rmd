@@ -253,8 +253,8 @@ print(performance(pred_rf))
 
 ## A recommender system
 
-<video width="320" height="240" controls>
-  <source src="movie.mp4" type="video/mp4">
+<video controls>
+  <source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/recsys1.mov" type="video/mov">
 </video>
 
 

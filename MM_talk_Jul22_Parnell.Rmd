@@ -9,6 +9,8 @@ output:
     autosize: true
     widescreen: yes
     linkcolor: white
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -44,38 +46,46 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 
 <span style="color:blue">2. Some examples of artificial intelligence used by the I-Form centre</span><br>
 
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/I-Form-Logo.GIF){width=70%}
+
 
 ## What is ML and AI?
 
-- Machine Learning (ML) and Artificial Intelligence (AI) are methods to make a computer take input data and make _predictions_.
-- In the recent past, a huge explosion has led to the _Big Data_ revolution:
+- Machine Learning (ML) and Artificial Intelligence (AI) are methods to make a computer take input data and make <span style="color:red">_predictions_</span>.
+- In the recent past, a huge explosion in data has led to the <span style="color:blue">_Big Data_</span revolution:
 
     - Volume
     - Variety
     - Veracity
     - Velocity
 
-## Examples of ML: Character and voice recognition
+## Examples of AI: Character and voice recognition
 
 <center>
 
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/mnistdigits.jpg){width=70%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/mnistdigits.jpg){width=60%}
 
 </center>
 
 ## Genomics
 
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/snp_plot.jpg){width=70%}
+<center>
+
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/snp_plot.gif){width=85%}
+
+</center>
 
 ## Industry 4.0 (and perhaps 5.0)
 
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/minstdigits.jpg){width=70%}
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/RenAM500M.jpg){width=70%}
+</center>
 
 ## What makes these data all the same?
 
 - They each have a __target__ that we're trying to predict (a digit, the size of a tumour, an aspect of a tool)
 - They each have a large number of __features__ which we can use to predict the target (pixels, genes, sensor data)
-- If we write the target as $y$ and the features as $X$ all these can be written as rectangular data structures (like an Excel spreadsheet)
+- The data can be written as __rectangular data structures__ (like an Excel spreadsheet)
 - We make the predictions using a __learner__. There are lots of different types, from linear regression to deep neural networks
 
 ## Testing performance
@@ -91,20 +101,16 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 ```{r, eval = FALSE}
 library(mlr)
 # Make a task
-task_1 = makeRegrTask(data = my_data_set, 
-                      target = 'y')
+task_1 = makeRegrTask(data = my_data_set, target = 'y')
 # Create training and test sets
-test_set = sample(n, 
-                  size = n/4)
+test_set = sample(n,size = n/4)
 train_set = (1:n)[-test_set]
 # Set up a leaner
 learner_1 = makeLearner('regr.h2o.deeplearning')
 # Train it on the training data
-train_1 = train(learner = learner_1, task = task_1, 
-                subset = train_set)
+train_1 = train(learner = learner_1, task = task_1, subset = train_set)
 # Predict on the test set data
-pred_1 = predict(object = train_1, task = task_1, 
-                 subset = test_set)
+pred_1 = predict(object = train_1, task = task_1, subset = test_set)
 # Check performance
 performance(pred_1)
 ```
@@ -120,7 +126,7 @@ performance(pred_1)
 
 - We aim to estimate $f()$ in:
 $$y = f(X) + e$$
-- The simplest possible useful model is a linear regression model:
+- The simplest useful model is a linear regression model:
 $$f = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots $$
 
 - We might minimise the least squares loss function:
@@ -131,12 +137,15 @@ We find the `best' values of $a$, $b_1$, $b_2$ etc that minimise the loss
 
 Make the $b$ terms depend on other hidden $b$ terms to produce richer functional behaviour
 
-\centering \includegraphics[width=\textwidth]{nn_pic.jpg}
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/nn_pic.jpg){width=70%}
+</center>
 
 ## Types of AI
 
-- Strictly speaking, the previously mentioned problems are all part of a sub-class of AI called __supervised learning__. They are supervised because they have a target variable. If the target variable is continuous this is commonly called _regression_ (e.g. the genetics data) whilst if it is discrete it is known as _classification_ (e.g. the digits data)
-- Another version of ML occurs when you have no target variable. In this case this is commonly known as __unsupervised learning__. 
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/ML_types.png){width=80%}
+</center>
 
 ## Running the digits data through R
 
@@ -165,14 +174,14 @@ show_digit(train$x[5,])
 mnist[1:6, c(405:410, 785)] # 0 = white, 255 = black
 ```
 
+Each image is 28 by 28 pixels
 
 ## Fitting a deep learning classifier
 
 \small 
 ```{r, include = FALSE}
 # Make a task
-task_mn = makeClassifTask(data = mnist, 
-                          target = 'digit')
+task_mn = makeClassifTask(data = mnist, target = 'digit')
 # Create training and test sets
 train_set = 1:60000
 test_set = 60001:70000
@@ -195,18 +204,15 @@ pred_dl <- readRDS(file = 'pred_dl.rds')
 
 ```{r, eval = FALSE}
 # Make a task and set up training/test sets
-task_mn = makeClassifTask(data = mnist, 
-                          target = 'digit')
+task_mn = makeClassifTask(data = mnist, target = 'digit')
 train_set = 1:60000
 test_set = 60001:70000
 # Set up a leaner
 learner_dl = makeLearner('classif.h2o.deeplearning',
                          predict.type = 'prob')
 # Train it on the training data
-train_dl = train(learner = learner_dl, task = task_mn,
-                 subset = train_set)
-pred_dl = predict(object = train_dl, task = task_mn,
-                  subset = test_set)
+train_dl = train(learner = learner_dl, task = task_mn, subset = train_set)
+pred_dl = predict(object = train_dl, task = task_mn, subset = test_set)
 # Check performance
 ```
 ```{r}
@@ -239,41 +245,107 @@ print(performance(pred_rf))
 ## Assessing performance of ML models
 
 - A good model should have predicted values close to the true values, or predicted classes close to the true classes. Some models will also produce uncertainties (e.g. intervals) or probabilities which can help determine the quality of the fit
-- The usual ones people use are the _root mean squared error_ (for regression problems), the _misclassification rate_ (for classification problems)
-- Other more advanced ones for classifiers include the _receiver operator characteristic curve_ and _precision-recall curve_. These work on the probabilities of each observation being in a particular class
+- The usual metrics people use are the _root mean squared error_ (for regression problems), the _misclassification rate_ (for classification problems)
+- Other more advanced metrics for classifiers include the _receiver operator characteristic curve_ and _precision-recall curve_. These work on the probabilities of each observation being in a particular class
 
 ## Neural network extensions
 
 - Convolutional and recurrent neural networks designed for image or time series data
 - Transfer learning where we use a pre-trained neural network that might have seen similar data to that which we are modelling
 - Active learning which allows for the user to train the model (e.g. provide labels) on data that the model is struggling to predict
+- Probabilistic uncertainty when we require more than just predictions
 - There are many more!
 
-# <span style = "color:white;position:relative;top:50px;">Part 2: AII and I-Form</span> {data-background=https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png data-background-size=cover}
+# <span style = "color:white;position:relative;top:50px;">Part 2: AI and I-Form</span> {data-background=https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png data-background-size=cover}
+
+## Common problems in AI and manufacturing
+
+- Extracting data from the machine
+- Fast and accurate analysis of high-dimensional data
+- Human labelling of the data stream 
+- Interpreting the analytics for the user so that they can take action
 
 ## A recommender system
 
-<video controls>
+<center>
+<video width="640" height="480" controls>
   <source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/recsys1.mp4" type="video/mp4">
 </video>
+</center>
 
+## Recommender system structure
 
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_schematic.png){width=65%}
+</center>
+
+## Recommender system interface
+
+<video width="640" height="480" controls>
+  <source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_Live.mp4" type="video/mp4">
+</video>
+
+## Anomaly detection 1: Control charts 
+
+<center>
+![](https://github.com/anhoej/qicharts2/raw/master/docs/articles/qicharts2_files/figure-html/unnamed-chunk-10-1.png){width=65%}
+</center>
+
+## Anomaly detection 2: Model-based clustering
+
+<center>
+![](https://mclust-org.github.io/mclust/articles/mclust_files/figure-html/unnamed-chunk-10-3.png){width=65%}
+</center>
+
+## Anomaly detection 3: STRAY
+
+<center>
+![](https://github.com/pridiltal/stray/raw/master/man/figures/README-datad-1.png){width=65%}
+</center>
+
+## Anomaly detection 4: Autoencoders
+
+<center>
+![](https://miro.medium.com/max/1200/1*nqzWupxC60iAH2dYrFT78Q.png){width=65%}
+</center>
+
+## Using STRAY to classify pores
+
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg){width=33%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg){width=33%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_3.jpg){width=33%}
+</center>
+
+## Using image detection to classify pores from images
+
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png){width=33%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg){width=33%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg){width=33%}
+</center>
+
+## How to learn more about AI in manufacturing
+
+- SCREENSHOT OF THE GITHUB REPO AND TRAINING SCHEME
+
+## A final word on reproducibility
+
+- The importance of it
+
+## Summary
+
+- In the near future we will be regularly streaming large amounts of data from AM machines and analysing it in real time to identify defects as they occur
+- The tools of AI are important to learn and will help you ride the wave of Industry 4.0/5.0
+- Come and join the I-Form centre in Phase 2 if you want to help build on these ideas
 
 ## Resources and funding
 
-Monticchio: [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/b/b1/Monticchio_Laghi.jpg);
-gifs: [Giphy](https://giphy.com);
-AMS machine: [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/f/f0/1_MV_accelerator_mass_spectrometer.jpg);
-Roadworks background: [flickr/Jeremy Segrott](https://www.flickr.com/photos/126337928@N05/);
-Confidence in the IPCC: [IPCC.ch](https://www.ipcc.ch/site/assets/uploads/2017/08/AR5_Uncertainty_Guidance_Note.pdf)
-Baby turtle: [flickr/Pedro Szekely](https://www.flickr.com/photos/pedrosz/);
-[BART generator](http://www.ranzey.com/generators/bart/index.html);
-Anger: [flickr/Saurabh Vyas](https://www.flickr.com/photos/vyassaurabh411/);
-Walking: [flickr/gato-gato-gato](https://www.flickr.com/photos/gato-gato-gato/)
-__All materials: [Github repo](https://github.com/andrewcparnell/reproducibility_talk_jan22)__
+Autoencoders: [Medium](https://medium.com/@birla.deepak26/autoencoders-76bb49ae6a8f);
 
-This work was supported by a Science Foundation Ireland Career Development Award grant 17/CDA/4695
+__All materials: [Github repo](https://github.com/andrewcparnell/MM_talk)__
 
+This work was supported by a Science Foundation Ireland Career Development Award grant 17/CDA/4695 and Research Centre Award 16/RC/3872
 
 <center>
 
@@ -284,5 +356,3 @@ This work was supported by a Science Foundation Ireland Career Development Award
 <font size="6"><span style="color:red;">Thank you!</span></font>
 
 </center>
-
-# <span style = "color:orangered;position:relative;top:50px;">What is AI?</span> {data-background=https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png data-background-size=cover}

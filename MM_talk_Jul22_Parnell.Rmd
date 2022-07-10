@@ -85,7 +85,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 
 ## What makes these data all the same?
 
-- They each have a <span style="color:red">_target_</span>that we're trying to predict (a digit, the size of a tumour, an aspect of a tool)
+- They each have a <span style="color:red">_target_</span> that we're trying to predict (a digit, the size of a tumour, an aspect of a tool)
 - They each have a large number of <span style="color:blue">_features_</span> which we can use to predict the target (pixels, genes, sensor data)
 - The data can be written as <span style="color:green">_rectangular data structures_</span> (like an Excel spreadsheet)
 - We make the predictions using a <span style="color:orange">_learner_</span>. There are lots of different types, from linear regression to deep neural networks
@@ -124,7 +124,7 @@ performance(pred_1)
 - A _learner_ is a black box that aims to predict the target from the features
 - The _predictions_ on the test set can be compared to the true target values to judge the performance of the learner
 
-## Learners 101: Least squares linear regression
+## Learners 101: Linear regression
 
 - We aim to estimate $f()$ in:
 $$y = f(X) + e$$
@@ -284,7 +284,7 @@ print(performance(pred_rf))
 ## Recommender system interface
 
 <center>
-<video width="960" height="720" controls>
+<video width="640" height="480" controls>
   <source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_Live.mp4" type="video/mp4">
 </video>
 </center>
@@ -332,8 +332,8 @@ print(performance(pred_rf))
 ## How to learn more about AI in manufacturing
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_1.jpg){width=50%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_2.jpg){width=50%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_1.jpg){width=40%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_2.jpg){width=40%}
 </center>
 
 ## Summary

@@ -46,13 +46,15 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 
 <span style="color:blue">2. Some examples of artificial intelligence used by the I-Form centre</span><br>
 
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/I-Form-Logo.GIF){width=70%}
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/I-Form-Logo.GIF){width=40%}
+</center>
 
 
 ## What is ML and AI?
 
 - Machine Learning (ML) and Artificial Intelligence (AI) are methods to make a computer take input data and make <span style="color:red">_predictions_</span>.
-- In the recent past, a huge explosion in data has led to the <span style="color:blue">_Big Data_</span revolution:
+- In the recent past, a huge explosion in data has led to the <span style="color:blue">_Big Data_</span> revolution:
 
     - Volume
     - Variety
@@ -78,21 +80,21 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 ## Industry 4.0 (and perhaps 5.0)
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/RenAM500M.jpg){width=70%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/RenAM500M.jpg){width=60%}
 </center>
 
 ## What makes these data all the same?
 
-- They each have a __target__ that we're trying to predict (a digit, the size of a tumour, an aspect of a tool)
-- They each have a large number of __features__ which we can use to predict the target (pixels, genes, sensor data)
-- The data can be written as __rectangular data structures__ (like an Excel spreadsheet)
-- We make the predictions using a __learner__. There are lots of different types, from linear regression to deep neural networks
+- They each have a <span style="color:red">_target_</span>that we're trying to predict (a digit, the size of a tumour, an aspect of a tool)
+- They each have a large number of <span style="color:blue">_features_</span> which we can use to predict the target (pixels, genes, sensor data)
+- The data can be written as <span style="color:green">_rectangular data structures_</span> (like an Excel spreadsheet)
+- We make the predictions using a <span style="color:orange">_learner_</span>. There are lots of different types, from linear regression to deep neural networks
 
 ## Testing performance
 
-- To determine the performance of our AI models we usually separate the data into a _training set_ and a _test set_
-- Taken together the data set, the target variable and the features are known as a __task__
-- We __train__ the learner on the training set and then __predict__ on the test set
+- To determine the performance of our AI models we usually separate the data into a <span style="color:red">_training set_</span> and a <span style="color:blue">_test set_</span>
+- Taken together the data set, the target variable and the features are known as a <span style="color:green">_task_</span>
+- We <span style="color:orange">_train_</span> the learner on the training set and then <span style="color:purple">_predict_</span> on the test set
 - Seeing as we know the target values for the test set we can determine how far away they are from the truth
 
 ## A workflow in R
@@ -122,7 +124,7 @@ performance(pred_1)
 - A _learner_ is a black box that aims to predict the target from the features
 - The _predictions_ on the test set can be compared to the true target values to judge the performance of the learner
 
-## The foundation of all the black boxes: least squares linear regression
+## Learners 101: Least squares linear regression
 
 - We aim to estimate $f()$ in:
 $$y = f(X) + e$$
@@ -281,14 +283,16 @@ print(performance(pred_rf))
 
 ## Recommender system interface
 
-<video width="640" height="480" controls>
+<center>
+<video width="960" height="720" controls>
   <source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_Live.mp4" type="video/mp4">
 </video>
+</center>
 
 ## Anomaly detection 1: Control charts 
 
 <center>
-![](https://github.com/anhoej/qicharts2/raw/master/docs/articles/qicharts2_files/figure-html/unnamed-chunk-10-1.png){width=65%}
+![](https://github.com/anhoej/qicharts2/raw/master/docs/articles/qicharts2_files/figure-html/unnamed-chunk-10-1.png){width=85%}
 </center>
 
 ## Anomaly detection 2: Model-based clustering
@@ -300,38 +304,37 @@ print(performance(pred_rf))
 ## Anomaly detection 3: STRAY
 
 <center>
-![](https://github.com/pridiltal/stray/raw/master/man/figures/README-datad-1.png){width=65%}
+![](https://github.com/pridiltal/stray/raw/master/man/figures/README-datad-1.png){width=55%}
 </center>
 
 ## Anomaly detection 4: Autoencoders
 
 <center>
-![](https://miro.medium.com/max/1200/1*nqzWupxC60iAH2dYrFT78Q.png){width=65%}
+![](https://miro.medium.com/max/1200/1*nqzWupxC60iAH2dYrFT78Q.png){width=75%}
 </center>
 
 ## Using STRAY to classify pores
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg){width=33%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg){width=33%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_3.jpg){width=33%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg){width=25%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg){width=25%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_3.jpg){width=50%}
 </center>
 
 ## Using image detection to classify pores from images
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png){width=33%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg){width=33%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg){width=33%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png){width=30%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg){width=40%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg){width=50%}
 </center>
 
 ## How to learn more about AI in manufacturing
 
-- SCREENSHOT OF THE GITHUB REPO AND TRAINING SCHEME
-
-## A final word on reproducibility
-
-- The importance of it
+<center>
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_1.jpg){width=50%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_2.jpg){width=50%}
+</center>
 
 ## Summary
 

@@ -3279,11 +3279,19 @@ color: white;
 <p><span style="color:blue">
 2. Some examples of artificial intelligence used by the I-Form centre</span><br></p>
 
+<center>
+
+<img width="40%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/I-Form-Logo.GIF' title=''/>
+
+</center>
+
 </article></slide><slide class=""><hgroup><h2>What is ML and AI?</h2></hgroup><article  id="what-is-ml-and-ai">
 
 <ul>
-<li><p>Machine Learning (ML) and Artificial Intelligence (AI) are methods to make a computer take input data and make <em>predictions</em>.</p></li>
-<li><p>In the recent past, a huge explosion has led to the <em>Big Data</em> revolution:</p>
+<li><p>Machine Learning (ML) and Artificial Intelligence (AI) are methods to make a computer take input data and make <span style="color:red">
+<em>predictions</em></span>.</p></li>
+<li><p>In the recent past, a huge explosion in data has led to the <span style="color:blue">
+<em>Big Data</em></span> revolution:</p>
 
 <ul>
 <li>Volume</li>
@@ -3293,37 +3301,54 @@ color: white;
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Examples of ML: Character and voice recognition</h2></hgroup><article  id="examples-of-ml-character-and-voice-recognition">
+</article></slide><slide class=""><hgroup><h2>Examples of AI: Character and voice recognition</h2></hgroup><article  id="examples-of-ai-character-and-voice-recognition">
 
 <center>
 
-<img width="70%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/mnistdigits.jpg' title=''/>
+<img width="60%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/mnistdigits.jpg' title=''/>
 
 </center>
 
 </article></slide><slide class=""><hgroup><h2>Genomics</h2></hgroup><article  id="genomics">
 
-<img width="70%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/snp_plot.gif' title=''/>
+<center>
+
+<img width="85%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/snp_plot.gif' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Industry 4.0 (and perhaps 5.0)</h2></hgroup><article  id="industry-4.0-and-perhaps-5.0">
 
-<img width="70%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/minstdigits.jpg' title=''/>
+<center>
+
+<img width="60%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/RenAM500M.jpg' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>What makes these data all the same?</h2></hgroup><article  id="what-makes-these-data-all-the-same">
 
 <ul>
-<li>They each have a <strong>target</strong> that we’re trying to predict (a digit, the size of a tumour, an aspect of a tool)</li>
-<li>They each have a large number of <strong>features</strong> which we can use to predict the target (pixels, genes, sensor data)</li>
-<li>If we write the target as \(y\) and the features as \(X\) all these can be written as rectangular data structures (like an Excel spreadsheet)</li>
-<li>We make the predictions using a <strong>learner</strong>. There are lots of different types, from linear regression to deep neural networks</li>
+<li>They each have a <span style="color:red">
+<em>target</em></span>that we’re trying to predict (a digit, the size of a tumour, an aspect of a tool)</li>
+<li>They each have a large number of <span style="color:blue">
+<em>features</em></span> which we can use to predict the target (pixels, genes, sensor data)</li>
+<li>The data can be written as <span style="color:green">
+<em>rectangular data structures</em></span> (like an Excel spreadsheet)</li>
+<li>We make the predictions using a <span style="color:orange">
+<em>learner</em></span>. There are lots of different types, from linear regression to deep neural networks</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Testing performance</h2></hgroup><article  id="testing-performance">
 
 <ul>
-<li>To determine the performance of our AI models we usually separate the data into a <em>training set</em> and a <em>test set</em></li>
-<li>Taken together the data set, the target variable and the features are known as a <strong>task</strong></li>
-<li>We <strong>train</strong> the learner on the training set and then <strong>predict</strong> on the test set</li>
+<li>To determine the performance of our AI models we usually separate the data into a <span style="color:red">
+<em>training set</em></span> and a <span style="color:blue">
+<em>test set</em></span></li>
+<li>Taken together the data set, the target variable and the features are known as a <span style="color:green">
+<em>task</em></span></li>
+<li>We <span style="color:orange">
+<em>train</em></span> the learner on the training set and then <span style="color:purple">
+<em>predict</em></span> on the test set</li>
 <li>Seeing as we know the target values for the test set we can determine how far away they are from the truth</li>
 </ul>
 
@@ -3333,20 +3358,16 @@ color: white;
 
 <pre class = 'prettyprint lang-r'>library(mlr)
 # Make a task
-task_1 = makeRegrTask(data = my_data_set, 
-                      target = &#39;y&#39;)
+task_1 = makeRegrTask(data = my_data_set, target = &#39;y&#39;)
 # Create training and test sets
-test_set = sample(n, 
-                  size = n/4)
+test_set = sample(n,size = n/4)
 train_set = (1:n)[-test_set]
 # Set up a leaner
 learner_1 = makeLearner(&#39;regr.h2o.deeplearning&#39;)
 # Train it on the training data
-train_1 = train(learner = learner_1, task = task_1, 
-                subset = train_set)
+train_1 = train(learner = learner_1, task = task_1, subset = train_set)
 # Predict on the test set data
-pred_1 = predict(object = train_1, task = task_1, 
-                 subset = test_set)
+pred_1 = predict(object = train_1, task = task_1, subset = test_set)
 # Check performance
 performance(pred_1)</pre>
 
@@ -3359,11 +3380,11 @@ performance(pred_1)</pre>
 <li>The <em>predictions</em> on the test set can be compared to the true target values to judge the performance of the learner</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>The foundation of all the black boxes: least squares linear regression</h2></hgroup><article  id="the-foundation-of-all-the-black-boxes-least-squares-linear-regression">
+</article></slide><slide class=""><hgroup><h2>Learners 101: Least squares linear regression</h2></hgroup><article  id="learners-101-least-squares-linear-regression">
 
 <ul>
 <li><p>We aim to estimate \(f()\) in: \[y = f(X) + e\]</p></li>
-<li><p>The simplest possible useful model is a linear regression model: \[f = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots \]</p></li>
+<li><p>The simplest useful model is a linear regression model: \[f = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots \]</p></li>
 <li><p>We might minimise the least squares loss function: \[\sum (y - f(X))^2\] We find the `best’ values of \(a\), \(b_1\), \(b_2\) etc that minimise the loss</p></li>
 </ul>
 
@@ -3371,14 +3392,19 @@ performance(pred_1)</pre>
 
 <p>Make the \(b\) terms depend on other hidden \(b\) terms to produce richer functional behaviour</p>
 
-<p></p>
+<center>
+
+<img width="70%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/nn_pic.jpg' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Types of AI</h2></hgroup><article  id="types-of-ai">
 
-<ul>
-<li>Strictly speaking, the previously mentioned problems are all part of a sub-class of AI called <strong>supervised learning</strong>. They are supervised because they have a target variable. If the target variable is continuous this is commonly called <em>regression</em> (e.g. the genetics data) whilst if it is discrete it is known as <em>classification</em> (e.g. the digits data)</li>
-<li>Another version of ML occurs when you have no target variable. In this case this is commonly known as <strong>unsupervised learning</strong>.</li>
-</ul>
+<center>
+
+<img width="80%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/ML_types.png' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Running the digits data through R</h2></hgroup><article  id="running-the-digits-data-through-r">
 
@@ -3398,23 +3424,22 @@ performance(pred_1)</pre>
 ## 5    197    241    253    252    251     77     9
 ## 6    179    253    253    255    253    253     2</pre>
 
+<p>Each image is 28 by 28 pixels</p>
+
 </article></slide><slide class=""><hgroup><h2>Fitting a deep learning classifier</h2></hgroup><article  id="fitting-a-deep-learning-classifier">
 
 
 
 <pre class = 'prettyprint lang-r'># Make a task and set up training/test sets
-task_mn = makeClassifTask(data = mnist, 
-                          target = &#39;digit&#39;)
+task_mn = makeClassifTask(data = mnist, target = &#39;digit&#39;)
 train_set = 1:60000
 test_set = 60001:70000
 # Set up a leaner
 learner_dl = makeLearner(&#39;classif.h2o.deeplearning&#39;,
                          predict.type = &#39;prob&#39;)
 # Train it on the training data
-train_dl = train(learner = learner_dl, task = task_mn,
-                 subset = train_set)
-pred_dl = predict(object = train_dl, task = task_mn,
-                  subset = test_set)
+train_dl = train(learner = learner_dl, task = task_mn, subset = train_set)
+pred_dl = predict(object = train_dl, task = task_mn, subset = test_set)
 # Check performance</pre>
 
 <pre class = 'prettyprint lang-r'>print(performance(pred_dl))</pre>
@@ -3457,8 +3482,8 @@ print(performance(pred_rf))</pre>
 
 <ul>
 <li>A good model should have predicted values close to the true values, or predicted classes close to the true classes. Some models will also produce uncertainties (e.g. intervals) or probabilities which can help determine the quality of the fit</li>
-<li>The usual ones people use are the <em>root mean squared error</em> (for regression problems), the <em>misclassification rate</em> (for classification problems)</li>
-<li>Other more advanced ones for classifiers include the <em>receiver operator characteristic curve</em> and <em>precision-recall curve</em>. These work on the probabilities of each observation being in a particular class</li>
+<li>The usual metrics people use are the <em>root mean squared error</em> (for regression problems), the <em>misclassification rate</em> (for classification problems)</li>
+<li>Other more advanced metrics for classifiers include the <em>receiver operator characteristic curve</em> and <em>precision-recall curve</em>. These work on the probabilities of each observation being in a particular class</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Neural network extensions</h2></hgroup><article  id="neural-network-extensions">
@@ -3467,22 +3492,25 @@ print(performance(pred_rf))</pre>
 <li>Convolutional and recurrent neural networks designed for image or time series data</li>
 <li>Transfer learning where we use a pre-trained neural network that might have seen similar data to that which we are modelling</li>
 <li>Active learning which allows for the user to train the model (e.g. provide labels) on data that the model is struggling to predict</li>
+<li>Probabilistic uncertainty when we require more than just predictions</li>
 <li>There are many more!</li>
 </ul>
 
 </article></slide><slide class="segue nobackground level1 fill" style="background-image: url(https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png); background-size: cover; background-position: center;"><hgroup class = 'auto-fadein'><h2><span style="color:white;position:relative;top:50px;">
-Part 2: AII and I-Form</span></h2></hgroup><article  id="part-2-aii-and-i-form">
+Part 2: AI and I-Form</span></h2></hgroup><article  id="part-2-ai-and-i-form">
 
-</article></slide><slide class=""><hgroup><h2>A common problems in AI and manufacturing</h2></hgroup><article  id="a-common-problems-in-ai-and-manufacturing">
+</article></slide><slide class=""><hgroup><h2>Common problems in AI and manufacturing</h2></hgroup><article  id="common-problems-in-ai-and-manufacturing">
 
 <ul>
-<li>Obtaining data</li>
-<li>Fast analysis</li>
-<li>Human labelling</li>
-<li>Interpreting the analytics for the user</li>
+<li>Extracting data from the machine</li>
+<li>Fast and accurate analysis of high-dimensional data</li>
+<li>Human labelling of the data stream</li>
+<li>Interpreting the analytics for the user so that they can take action</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>A recommender system</h2></hgroup><article  id="a-recommender-system">
+
+<center>
 
 <video width="640" height="480" controls>
 
@@ -3490,87 +3518,99 @@ Part 2: AII and I-Form</span></h2></hgroup><article  id="part-2-aii-and-i-form">
 
 </video>
 
+</center>
+
 </article></slide><slide class=""><hgroup><h2>Recommender system structure</h2></hgroup><article  id="recommender-system-structure">
 
-<p><img width="70%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_schematic.png' title=''/> ## Recommender system interface</p>
+<center>
 
-<video width="640" height="480" controls>
+<img width="65%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_schematic.png' title=''/>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Recommender system interface</h2></hgroup><article  id="recommender-system-interface">
+
+<center>
+
+<video width="960" height="720" controls>
 
 <source src="https://github.com/andrewcparnell/MM_talk/raw/main/img/RecSys_Live.mp4" type="video/mp4">
 
 </video>
 
+</center>
+
 </article></slide><slide class=""><hgroup><h2>Anomaly detection 1: Control charts</h2></hgroup><article  id="anomaly-detection-1-control-charts">
 
-<ul>
-<li>PICTURE</li>
-</ul>
+<center>
+
+<img width="85%" src='https://github.com/anhoej/qicharts2/raw/master/docs/articles/qicharts2_files/figure-html/unnamed-chunk-10-1.png' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Anomaly detection 2: Model-based clustering</h2></hgroup><article  id="anomaly-detection-2-model-based-clustering">
 
-<ul>
-<li>PICTURE</li>
-</ul>
+<center>
+
+<img width="65%" src='https://mclust-org.github.io/mclust/articles/mclust_files/figure-html/unnamed-chunk-10-3.png' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Anomaly detection 3: STRAY</h2></hgroup><article  id="anomaly-detection-3-stray">
 
-<ul>
-<li>PICTURE</li>
-</ul>
+<center>
+
+<img width="55%" src='https://github.com/pridiltal/stray/raw/master/man/figures/README-datad-1.png' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Anomaly detection 4: Autoencoders</h2></hgroup><article  id="anomaly-detection-4-autoencoders">
 
-<ul>
-<li>PICTURE</li>
-</ul>
+<center>
+
+<img width="75%" src='https://miro.medium.com/max/1200/1*nqzWupxC60iAH2dYrFT78Q.png' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Using STRAY to classify pores</h2></hgroup><article  id="using-stray-to-classify-pores">
 
-<ul>
-<li>PICTURE FROM AOIFE PAPER</li>
-</ul>
+<center>
+
+<img width="25%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg' title=''/> <img width="25%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg' title=''/> <img width="50%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_3.jpg' title=''/>
+
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Using image detection to classify pores from images</h2></hgroup><article  id="using-image-detection-to-classify-pores-from-images">
 
-<ul>
-<li>PICTURE FROM CONOR</li>
-</ul>
+<center>
 
-</article></slide><slide class=""><hgroup><h2>Time Series classification for pore detection</h2></hgroup><article  id="time-series-classification-for-pore-detection">
+<img width="30%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png' title=''/> <img width="40%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg' title=''/> <img width="50%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg' title=''/>
 
-<ul>
-<li>PICTURE FROM VIVEK PAPER</li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Future development of the RecSys</h2></hgroup><article  id="future-development-of-the-recsys">
-
-<ul>
-<li>STUFF FROM PRESENTATION</li>
-</ul>
+</center>
 
 </article></slide><slide class=""><hgroup><h2>How to learn more about AI in manufacturing</h2></hgroup><article  id="how-to-learn-more-about-ai-in-manufacturing">
 
-<ul>
-<li>SCREENSHOT OF THE GITHUB REPO AND TRAINING SCHEME</li>
-</ul>
+<center>
 
-</article></slide><slide class=""><hgroup><h2>A final word on reproducibility</h2></hgroup><article  id="a-final-word-on-reproducibility">
+<img width="50%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_1.jpg' title=''/> <img width="50%" src='https://github.com/andrewcparnell/MM_talk/raw/main/img/Github_2.jpg' title=''/>
 
-<ul>
-<li>The importance of it</li>
-</ul>
+</center>
 
 </article></slide><slide class=""><hgroup><h2>Summary</h2></hgroup><article  id="summary">
 
 <ul>
-<li>3 points</li>
+<li>In the near future we will be regularly streaming large amounts of data from AM machines and analysing it in real time to identify defects as they occur</li>
+<li>The tools of AI are important to learn and will help you ride the wave of Industry 4.0/5.0</li>
+<li>Come and join the I-Form centre in Phase 2 if you want to help build on these ideas</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Resources and funding</h2></hgroup><article  id="resources-and-funding">
 
-<p>Monticchio: <a href='https://upload.wikimedia.org/wikipedia/commons/b/b1/Monticchio_Laghi.jpg' title=''>Wikipedia</a>; gifs: <a href='https://giphy.com' title=''>Giphy</a>; AMS machine: <a href='https://upload.wikimedia.org/wikipedia/commons/f/f0/1_MV_accelerator_mass_spectrometer.jpg' title=''>Wikipedia</a>; Roadworks background: <a href='https://www.flickr.com/photos/126337928@N05/' title=''>flickr/Jeremy Segrott</a>; Confidence in the IPCC: <a href='https://www.ipcc.ch/site/assets/uploads/2017/08/AR5_Uncertainty_Guidance_Note.pdf' title=''>IPCC.ch</a> Baby turtle: <a href='https://www.flickr.com/photos/pedrosz/' title=''>flickr/Pedro Szekely</a>; <a href='http://www.ranzey.com/generators/bart/index.html' title=''>BART generator</a>; Anger: <a href='https://www.flickr.com/photos/vyassaurabh411/' title=''>flickr/Saurabh Vyas</a>; Walking: <a href='https://www.flickr.com/photos/gato-gato-gato/' title=''>flickr/gato-gato-gato</a> <strong>All materials: <a href='https://github.com/andrewcparnell/reproducibility_talk_jan22' title=''>Github repo</a></strong></p>
+<p>Autoencoders: <a href='https://medium.com/@birla.deepak26/autoencoders-76bb49ae6a8f' title=''>Medium</a>;</p>
 
-<p>This work was supported by a Science Foundation Ireland Career Development Award grant 17/CDA/4695</p>
+<p><strong>All materials: <a href='https://github.com/andrewcparnell/MM_talk' title=''>Github repo</a></strong></p>
+
+<p>This work was supported by a Science Foundation Ireland Career Development Award grant 17/CDA/4695 and Research Centre Award 16/RC/3872</p>
 
 <center>
 
@@ -3581,10 +3621,7 @@ Part 2: AII and I-Form</span></h2></hgroup><article  id="part-2-aii-and-i-form">
 <p><font size="6"><span style="color:red;">
 Thank you!</span></font></p>
 
-</center>
-
-</article></slide><slide class="segue nobackground level1 fill" style="background-image: url(https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png); background-size: cover; background-position: center;"><hgroup class = 'auto-fadein'><h2><span style="color:orangered;position:relative;top:50px;">
-What is AI?</span></h2></hgroup><article  id="what-is-ai"></article></slide>
+</center></article></slide>
 
 
   <slide class="backdrop"></slide>

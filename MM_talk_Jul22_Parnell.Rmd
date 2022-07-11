@@ -247,7 +247,7 @@ print(performance(pred_rf))
 ## Assessing performance of ML models
 
 - A good model should have predicted values close to the true values, or predicted classes close to the true classes. Some models will also produce uncertainties (e.g. intervals) or probabilities which can help determine the quality of the fit
-- The usual metrics people use are the <span style="color:red">_root mean squared error_</span> (for regression problems), the <span style="color:blue">_misclassification rate_</span>(for classification problems)
+- The usual metrics people use are the <span style="color:red">_root mean squared error_</span> (for regression problems), the <span style="color:blue">_misclassification rate_</span> (for classification problems)
 - Other more advanced metrics for classifiers include the <span style="color:green">_receiver operator characteristic curve_</span> and <span style="color:orange">_precision-recall curve_</span>. These work on the probabilities of each observation being in a particular class
 
 ## Neural network extensions
@@ -263,7 +263,7 @@ print(performance(pred_rf))
 ## Common problems in AI and manufacturing
 
 - <span style="color:red">_Extracting data_</span> from the machine
-- Fast and accurate analysis of <span style="color:blue">high-dimensional_</span> data
+- Fast and accurate analysis of <span style="color:blue">_high-dimensional_</span> data
 - <span style="color:green">_Human labelling_</span> of the data stream 
 - <span style="color:orange">_Interpreting_</span> the analytics for the user so that they can take action
 
@@ -316,17 +316,13 @@ print(performance(pred_rf))
 ## Using STRAY to classify pores
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg){width=20%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg){width=20%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_3.jpg){width=50%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_4.jpg){width=40%}
 </center>
 
 ## Using image detection to classify pores from images
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png){width=20%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg){width=30%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg){width=25%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_4.png){width=90%}
 </center>
 
 ## How to learn more about AI in manufacturing

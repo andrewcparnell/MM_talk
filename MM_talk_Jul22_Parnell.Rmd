@@ -316,7 +316,7 @@ print(performance(pred_rf))
 ## Using STRAY to classify pores
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_4.png){width=40%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_4.png){width=90%}
 </center>
 
 ## Using image detection to classify pores from images
@@ -340,7 +340,7 @@ print(performance(pred_rf))
 
 ## Resources and funding
 
-Autoencoders: [Medium](https://medium.com/@birla.deepak26/autoencoders-76bb49ae6a8f);
+[I-Form](https://www.i-form.ie), [MNIST code](http://yann.lecun.com/exdb/mnist/), [Types of Machine Learning picture](https://rayenmhamdi.github.io/ai/ml/), [Control charts](https://anhoej.github.io/qicharts2/), [Model based clustering](https://mclust-org.github.io), [STRAY](https://github.com/pridiltal/stray),  [Autoencoders](https://medium.com/@birla.deepak26/autoencoders-76bb49ae6a8f), [Doyle STRAY paper](https://www.sciencedirect.com/science/article/pii/S235197892100175X), [I-Form Github repo](https://github.com/I-Form)
 
 __All materials: [Github repo](https://github.com/andrewcparnell/MM_talk)__
 

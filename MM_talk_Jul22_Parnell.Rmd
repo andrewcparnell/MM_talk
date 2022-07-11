@@ -77,7 +77,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 
 </center>
 
-## Industry 4.0 (and perhaps 5.0)
+## Additive Manufacturing
 
 <center>
 ![](https://github.com/andrewcparnell/MM_talk/raw/main/img/RenAM500M.jpg){width=60%}
@@ -315,13 +315,13 @@ print(performance(pred_rf))
 ![](https://miro.medium.com/max/1200/1*nqzWupxC60iAH2dYrFT78Q.png){width=75%}
 </center>
 
-## Using STRAY to classify pores
+## Using STRAY to detect defects
 
 <center>
 ![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_4.png){width=90%}
 </center>
 
-## Using image detection to classify pores from images
+## Image detection to classify pores
 
 <center>
 ![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_4.png){width=90%}

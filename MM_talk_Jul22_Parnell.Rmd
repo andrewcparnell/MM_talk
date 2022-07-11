@@ -247,15 +247,15 @@ print(performance(pred_rf))
 ## Assessing performance of ML models
 
 - A good model should have predicted values close to the true values, or predicted classes close to the true classes. Some models will also produce uncertainties (e.g. intervals) or probabilities which can help determine the quality of the fit
-- The usual metrics people use are the _root mean squared error_ (for regression problems), the _misclassification rate_ (for classification problems)
-- Other more advanced metrics for classifiers include the _receiver operator characteristic curve_ and _precision-recall curve_. These work on the probabilities of each observation being in a particular class
+- The usual metrics people use are the <span style="color:red">_root mean squared error_</span> (for regression problems), the <span style="color:blue">_misclassification rate_</span>(for classification problems)
+- Other more advanced metrics for classifiers include the <span style="color:green">_receiver operator characteristic curve_</span> and <span style="color:orange">_precision-recall curve_</span>. These work on the probabilities of each observation being in a particular class
 
 ## Neural network extensions
 
-- Convolutional and recurrent neural networks designed for image or time series data
-- Transfer learning where we use a pre-trained neural network that might have seen similar data to that which we are modelling
-- Active learning which allows for the user to train the model (e.g. provide labels) on data that the model is struggling to predict
-- Probabilistic uncertainty when we require more than just predictions
+- <span style="color:red">_Convolutional and recurrent_</span> neural networks designed for image or time series data
+- <span style="color:blue">_Transfer learning_</span> where we use a pre-trained neural network that might have seen similar data to that which we are modelling
+- <span style="color:green">_Active learning_</span> which allows for the user to train the model (e.g. provide labels) on data that the model is struggling to predict
+- <span style="color:orange">_Probabilistic uncertainty_</span> when we require more than just predictions
 - There are many more!
 
 # <span style = "color:white;position:relative;top:50px;">Part 2: AI and I-Form</span> {data-background=https://github.com/andrewcparnell/MM_talk/raw/main/img/code.png data-background-size=cover}

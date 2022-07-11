@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 5, fig.align = 'center')
 
 <script>
     $(document).ready(function() {
-      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"https://is.gd/Parnell_MM_talk\"></footer>');    
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"is.gd/Parnell_MM_talk\"></footer>');    
     })
 </script>
 
@@ -128,16 +128,16 @@ performance(pred_1)
 
 - We aim to estimate $f()$ in:
 $$y = f(X) + e$$
-- The simplest useful model is a linear regression model:
+- The simplest useful model is a <span style="color:red">_linear regression_</span> model:
 $$f = a + b_1 x_1 + b_2 x_2 + b_3 x_3 + \ldots $$
 
-- We might minimise the least squares loss function:
+- We might minimise the <span style="color:blue">_least squares loss function_</span>:
 $$\sum (y - f(X))^2$$
-We find the `best' values of $a$, $b_1$, $b_2$ etc that minimise the loss
+We find the `best' values of $a$, $b_1$, $b_2$ etc that <span style="color:green">_minimise the loss_</span>
 
 ## From linear regression to deep learning
 
-Make the $b$ terms depend on other hidden $b$ terms to produce richer functional behaviour
+Make the $b$ terms depend on other <span style="color:red">_hidden_</span> $b$ terms to produce richer functional behaviour
 
 <center>
 ![](https://github.com/andrewcparnell/MM_talk/raw/main/img/nn_pic.jpg){width=70%}
@@ -262,10 +262,10 @@ print(performance(pred_rf))
 
 ## Common problems in AI and manufacturing
 
-- Extracting data from the machine
-- Fast and accurate analysis of high-dimensional data
-- Human labelling of the data stream 
-- Interpreting the analytics for the user so that they can take action
+- <span style="color:red">_Extracting data_</span> from the machine
+- Fast and accurate analysis of <span style="color:blue">high-dimensional_</span> data
+- <span style="color:green">_Human labelling_</span> of the data stream 
+- <span style="color:orange">_Interpreting_</span> the analytics for the user so that they can take action
 
 ## A recommender system
 
@@ -316,17 +316,17 @@ print(performance(pred_rf))
 ## Using STRAY to classify pores
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg){width=25%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg){width=25%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_1.jpg){width=20%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_2.jpg){width=20%}
 ![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Doyle_3.jpg){width=50%}
 </center>
 
 ## Using image detection to classify pores from images
 
 <center>
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png){width=30%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg){width=40%}
-![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg){width=50%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_1.png){width=20%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_2.jpg){width=30%}
+![](https://github.com/andrewcparnell/MM_talk/raw/main/img/Sheehan_3.jpg){width=25%}
 </center>
 
 ## How to learn more about AI in manufacturing
@@ -338,9 +338,9 @@ print(performance(pred_rf))
 
 ## Summary
 
-- In the near future we will be regularly streaming large amounts of data from AM machines and analysing it in real time to identify defects as they occur
-- The tools of AI are important to learn and will help you ride the wave of Industry 4.0/5.0
-- Come and join the I-Form centre in Phase 2 if you want to help build on these ideas
+- In the near future we will be <span style="color:red">_regularly streaming_</span> large amounts of data from AM machines and analysing it in real time to identify defects as they occur
+- The tools of AI are <span style="color:blue">_important to learn_</span> and will help you ride the wave of Industry 4.0/5.0
+- Come and join the <span style="color:green">_I-Form centre_</span> in Phase 2 if you want to help work on extending these ideas
 
 ## Resources and funding
 
